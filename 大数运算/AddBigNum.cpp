@@ -1,16 +1,16 @@
 /**
- * ´óÊý¼Ó·¨
+ * å¤§æ•°åŠ æ³•
  * **/
 #include<iostream>
 #include<cstring>
 #define N 500
 using namespace std;
 /*
-º¯ÊýÃû  £ºTranChar2Int
-º¯Êý¹¦ÄÜ£º½«×Ö·ûÊý×é×ª»¯ÎªÕûÐÍÊý×é
-Èë²Î    : ×Ö·ûÊý×é
-³ö²Î    £ºÕûÐÍÊý×é
-·µ»ØÖµ  £ºÎÞ
+å‡½æ•°å  ï¼šTranChar2Int
+å‡½æ•°åŠŸèƒ½ï¼šå°†å­—ç¬¦æ•°ç»„è½¬åŒ–ä¸ºæ•´åž‹æ•°ç»„
+å…¥å‚    : å­—ç¬¦æ•°ç»„
+å‡ºå‚    ï¼šæ•´åž‹æ•°ç»„
+è¿”å›žå€¼  ï¼šæ— 
 */
 void TranChar2Int(const char *strArr, int iArray[]) {
   int i, j, iLen = strlen(strArr);
@@ -19,11 +19,11 @@ void TranChar2Int(const char *strArr, int iArray[]) {
   }
 }
 /*
-º¯ÊýÃû  £ºTranInt2Char
-º¯Êý¹¦ÄÜ£º½«ÕûÐÍÊý×é×ª»¯Îª×Ö·ûÊý×é
-Èë²Î    : ÕûÐÍÊý×é
-³ö²Î    £º×Ö·ûÊý×é
-·µ»ØÖµ  £ºÎÞ
+å‡½æ•°å  ï¼šTranInt2Char
+å‡½æ•°åŠŸèƒ½ï¼šå°†æ•´åž‹æ•°ç»„è½¬åŒ–ä¸ºå­—ç¬¦æ•°ç»„
+å…¥å‚    : æ•´åž‹æ•°ç»„
+å‡ºå‚    ï¼šå­—ç¬¦æ•°ç»„
+è¿”å›žå€¼  ï¼šæ— 
 */
 void TranInt2Char(int iArray[], char cArray[], int index) {
   int i, j;
@@ -32,39 +32,41 @@ void TranInt2Char(int iArray[], char cArray[], int index) {
   }
 }
 /*
-º¯ÊýÃû  £ºGetFirstNot0Index
-º¯Êý¹¦ÄÜ£º»ñÈ¡Êý×é×îºóÒ»Î»ÊýµÄÏÂ±ê
-Èë²Î    : Êý×éiResult[]Óë³¤¶ÈiLen
-³ö²Î    £ºÎÞ
-·µ»ØÖµ  £ºÊý×é×îºóÒ»Î»ÊýµÄÏÂ±ê
+å‡½æ•°å  ï¼šGetFirstNot0Index
+å‡½æ•°åŠŸèƒ½ï¼šèŽ·å–æ•°ç»„æœ€åŽä¸€ä½æ•°çš„ä¸‹æ ‡
+å…¥å‚    : æ•°ç»„iResult[]ä¸Žé•¿åº¦iLen
+å‡ºå‚    ï¼šæ— 
+è¿”å›žå€¼  ï¼šæ•°ç»„æœ€åŽä¸€ä½æ•°çš„ä¸‹æ ‡
 */
 int GetFirstNot0Index(int iResult[], int iLen) {
   int i;
   for (i = iLen - 1; i >= 0; --i) {
-    if (iResult[i])  //ÕÒµ½×î¸ßÎ»µÚÒ»¸ö²»Îª0
+    if (iResult[i])  //æ‰¾åˆ°æœ€é«˜ä½ç¬¬ä¸€ä¸ªä¸ä¸º0
     {
       return i;
     }
   }
   return 0;
 }
+
+
 /*
-º¯ÊýÃû  £ºAddBigNum
-º¯Êý¹¦ÄÜ£º´óÊý¾Ý¼Ó·¨
-Èë²Î    : Êý×écFirst[]ÓëcSecond[]
-³ö²Î    £ºÊý×écFirst[]
-·µ»ØÖµ  £ºÎÞ
+å‡½æ•°å  ï¼šAddBigNum
+å‡½æ•°åŠŸèƒ½ï¼šå¤§æ•°æ®åŠ æ³•
+å…¥å‚    : æ•°ç»„cFirst[]ä¸ŽcSecond[]
+å‡ºå‚    ï¼šæ•°ç»„cFirst[]
+è¿”å›žå€¼  ï¼šæ— 
 */
 void AddBigNum(char cFirst[], char cSecond[]) {
   int i, iLen;
   int iFirst[N] = {0}, iSecond[N] = {0};
-  //Çó2¸öÊý×éµÄ×î´ó³¤¶È
+  //æ±‚2ä¸ªæ•°ç»„çš„æœ€å¤§é•¿åº¦
   iLen = (strlen(cFirst) > strlen(cSecond)) ? strlen(cFirst) : strlen(cSecond);
   TranChar2Int(cFirst, iFirst);
   TranChar2Int(cSecond, iSecond);
   for (i = 0; i < N; i++) {
     iFirst[i] += iSecond[i];
-    //Èç¹û´óÓÚ9Ðè½øÎ»
+    //å¦‚æžœå¤§äºŽ9éœ€è¿›ä½
     if (iFirst[i] > 9) {
       iFirst[i] -= 10;
       iFirst[i + 1]++;

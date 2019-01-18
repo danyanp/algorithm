@@ -9,10 +9,10 @@
 #include <string>
 #include <cstring>
 using namespace std;
-/*ºê¶¨ÒåÇøÓò*/
-#define   N   500      /*¶¨ÒåÊı×é×î´óµÄÎ¬Êı*/
+/*å®å®šä¹‰åŒºåŸŸ*/
+#define   N   500      /*å®šä¹‰æ•°ç»„æœ€å¤§çš„ç»´æ•°*/
 
-/*º¯Êı¶¨ÒåÇøÓò*/
+/*å‡½æ•°å®šä¹‰åŒºåŸŸ*/
 int  GetFirstNot0Index(int iResult[], int iLen);
 void TranChar2Int(const char *strArr,int iArray[]);
 void PowOf10(char cNum[],int iPow,int iQuotientNum);
@@ -27,11 +27,11 @@ int    DivBigNum(char cFirst[],char cSecond[],char cResult[]);
 
 
 /*
-º¯ÊıÃû  £ºTranChar2Int
-º¯Êı¹¦ÄÜ£º½«×Ö·ûÊı×é×ª»¯ÎªÕûĞÍÊı×é
-Èë²Î    : ×Ö·ûÊı×é
-³ö²Î    £ºÕûĞÍÊı×é
-·µ»ØÖµ  £ºÎŞ
+å‡½æ•°å  ï¼šTranChar2Int
+å‡½æ•°åŠŸèƒ½ï¼šå°†å­—ç¬¦æ•°ç»„è½¬åŒ–ä¸ºæ•´å‹æ•°ç»„
+å…¥å‚    : å­—ç¬¦æ•°ç»„
+å‡ºå‚    ï¼šæ•´å‹æ•°ç»„
+è¿”å›å€¼  ï¼šæ— 
 */
 void TranChar2Int(const char *strArr,int iArray[])
 {
@@ -42,11 +42,11 @@ void TranChar2Int(const char *strArr,int iArray[])
     }
 }
 /*
-º¯ÊıÃû  £ºTranInt2Char
-º¯Êı¹¦ÄÜ£º½«ÕûĞÍÊı×é×ª»¯Îª×Ö·ûÊı×é
-Èë²Î    : ÕûĞÍÊı×é
-³ö²Î    £º×Ö·ûÊı×é
-·µ»ØÖµ  £ºÎŞ
+å‡½æ•°å  ï¼šTranInt2Char
+å‡½æ•°åŠŸèƒ½ï¼šå°†æ•´å‹æ•°ç»„è½¬åŒ–ä¸ºå­—ç¬¦æ•°ç»„
+å…¥å‚    : æ•´å‹æ•°ç»„
+å‡ºå‚    ï¼šå­—ç¬¦æ•°ç»„
+è¿”å›å€¼  ï¼šæ— 
 */
 void TranInt2Char(int iArray[],char cArray[],int index)
 {
@@ -58,18 +58,18 @@ void TranInt2Char(int iArray[],char cArray[],int index)
 }
 
 /*
-º¯ÊıÃû  £ºGetFirstNot0Index
-º¯Êı¹¦ÄÜ£º»ñÈ¡Êı×é×îºóÒ»Î»ÊıµÄÏÂ±ê
-Èë²Î    : Êı×éiResult[]Óë³¤¶ÈiLen
-³ö²Î    £ºÎŞ
-·µ»ØÖµ  £ºÊı×é×îºóÒ»Î»ÊıµÄÏÂ±ê
+å‡½æ•°å  ï¼šGetFirstNot0Index
+å‡½æ•°åŠŸèƒ½ï¼šè·å–æ•°ç»„æœ€åä¸€ä½æ•°çš„ä¸‹æ ‡
+å…¥å‚    : æ•°ç»„iResult[]ä¸é•¿åº¦iLen
+å‡ºå‚    ï¼šæ— 
+è¿”å›å€¼  ï¼šæ•°ç»„æœ€åä¸€ä½æ•°çš„ä¸‹æ ‡
 */
 int GetFirstNot0Index(int iResult[], int iLen)
 {
     int i;
     for(i = iLen-1; i>=0; --i)
     {
-        if(iResult[i])    //ÕÒµ½×î¸ßÎ»µÚÒ»¸ö²»Îª0
+        if(iResult[i])    //æ‰¾åˆ°æœ€é«˜ä½ç¬¬ä¸€ä¸ªä¸ä¸º0
         {
             return i;
         }
@@ -77,11 +77,11 @@ int GetFirstNot0Index(int iResult[], int iLen)
     return 0;
 }
 /*
-º¯ÊıÃû  £ºBigNumCmp
-º¯Êı¹¦ÄÜ£º±È½Ï2¸ö´óÊıµÄ´óĞ¡
-Èë²Î    : 2¸ö´óÊı
-³ö²Î    £ºÎŞ
-·µ»ØÖµ  £º0Ğ¡ÓÚ£¬1µÈÓÚ£¬2´óÓÚ
+å‡½æ•°å  ï¼šBigNumCmp
+å‡½æ•°åŠŸèƒ½ï¼šæ¯”è¾ƒ2ä¸ªå¤§æ•°çš„å¤§å°
+å…¥å‚    : 2ä¸ªå¤§æ•°
+å‡ºå‚    ï¼šæ— 
+è¿”å›å€¼  ï¼š0å°äºï¼Œ1ç­‰äºï¼Œ2å¤§äº
 */
 int BigNumCmp(const char *pStr1,const char *pStr2)
 {
@@ -121,24 +121,24 @@ int BigNumCmp(const char *pStr1,const char *pStr2)
     return 0;
 }
 /*
-º¯ÊıÃû  £ºAddBigNum
-º¯Êı¹¦ÄÜ£º´óÊı¾İ¼Ó·¨
-Èë²Î    : Êı×écFirst[]ÓëcSecond[]
-³ö²Î    £ºÊı×écFirst[]
-·µ»ØÖµ  £ºÎŞ
+å‡½æ•°å  ï¼šAddBigNum
+å‡½æ•°åŠŸèƒ½ï¼šå¤§æ•°æ®åŠ æ³•
+å…¥å‚    : æ•°ç»„cFirst[]ä¸cSecond[]
+å‡ºå‚    ï¼šæ•°ç»„cFirst[]
+è¿”å›å€¼  ï¼šæ— 
 */
 void AddBigNum(char cFirst[],char cSecond[])
 {
     int i,iLen;
     int iFirst[N] = {0},iSecond[N] = {0};
-    //Çó2¸öÊı×éµÄ×î´ó³¤¶È
+    //æ±‚2ä¸ªæ•°ç»„çš„æœ€å¤§é•¿åº¦
     iLen = (strlen(cFirst) > strlen(cSecond)) ? strlen(cFirst) : strlen(cSecond);
     TranChar2Int(cFirst,iFirst);
     TranChar2Int(cSecond,iSecond);
     for (i = 0; i < N; i ++)
     {
         iFirst[i] += iSecond[i];
-        //Èç¹û´óÓÚ9Ğè½øÎ»
+        //å¦‚æœå¤§äº9éœ€è¿›ä½
         if (iFirst[i] > 9)
         {
             iFirst[i] -= 10;
@@ -148,11 +148,11 @@ void AddBigNum(char cFirst[],char cSecond[])
     TranInt2Char(iFirst,cFirst,GetFirstNot0Index(iFirst,iLen + 1));
 }
 /*
-º¯ÊıÃû  £ºSubtractBigNum
-º¯Êı¹¦ÄÜ£º´óÊı¾İ¼õ·¨£¬ÔÚÖ´ĞĞ´Ëº¯ÊıÖ®Ç°Ğë±£Ö¤¼õÊı´óÓÚ±»¼õÊı
-Èë²Î    : Êı×écFirst[]ÓëcSecond[]
-³ö²Î    £ºÊı×écFirst[]
-·µ»ØÖµ  £º·Ç¸ºÊı·µ»Ø¿Õ´®£¬¸ºÊı·µ»Ø"-"
+å‡½æ•°å  ï¼šSubtractBigNum
+å‡½æ•°åŠŸèƒ½ï¼šå¤§æ•°æ®å‡æ³•ï¼Œåœ¨æ‰§è¡Œæ­¤å‡½æ•°ä¹‹å‰é¡»ä¿è¯å‡æ•°å¤§äºè¢«å‡æ•°
+å…¥å‚    : æ•°ç»„cFirst[]ä¸cSecond[]
+å‡ºå‚    ï¼šæ•°ç»„cFirst[]
+è¿”å›å€¼  ï¼šéè´Ÿæ•°è¿”å›ç©ºä¸²ï¼Œè´Ÿæ•°è¿”å›"-"
 */
 string SubtractBigNum(char cFirst[],char cSecond[])
 {
@@ -160,7 +160,7 @@ string SubtractBigNum(char cFirst[],char cSecond[])
     int i,iLen;
 	char cTmp[N];
     int iFirst[N] = {0},iSecond[N] = {0};
-	//Èç¹û±»¼õÊı´óÓÚ¼õÊıÊ±£¬½»»»Á½¸öÊıÔÙÏà¼õ£¬×îºó¼Ó¸ö¡°-¡±ºÅ¼´¿É
+	//å¦‚æœè¢«å‡æ•°å¤§äºå‡æ•°æ—¶ï¼Œäº¤æ¢ä¸¤ä¸ªæ•°å†ç›¸å‡ï¼Œæœ€ååŠ ä¸ªâ€œ-â€å·å³å¯
 	if (0 == BigNumCmp(cFirst,cSecond))
 	{
 		strcpy(cTmp,cFirst);
@@ -175,7 +175,7 @@ string SubtractBigNum(char cFirst[],char cSecond[])
     for (i = 0; i < iLen; i++)  
     {  
         iFirst[i] -= iSecond[i];
-        //Èç¹û¸ÃÎ»Ğ¡ÓÚ0£¬Ğè½èÎ»
+        //å¦‚æœè¯¥ä½å°äº0ï¼Œéœ€å€Ÿä½
         if(iFirst[i] < 0)  
         {  
             iFirst[i] = iFirst[i] + 10;  
@@ -186,22 +186,24 @@ string SubtractBigNum(char cFirst[],char cSecond[])
 	return str;
 }
 /*
-º¯ÊıÃû  £ºMultiplyBigNum
-º¯Êı¹¦ÄÜ£º´óÊı¾İ³Ë·¨
-Èë²Î    : Êı×écFirst[]ÓëcSecond[]
-³ö²Î    £ºÊı×écResult[]
-·µ»ØÖµ  £ºÎŞ
+å‡½æ•°å  ï¼šMultiplyBigNum
+å‡½æ•°åŠŸèƒ½ï¼šå¤§æ•°æ®ä¹˜æ³•
+å…¥å‚    : æ•°ç»„cFirst[]ä¸cSecond[]
+å‡ºå‚    ï¼šæ•°ç»„cResult[]
+è¿”å›å€¼  ï¼šæ— 
 */
 void MultiplyBigNum(char cFirst[],char cSecond[],char cResult[])
 {
     int i,j,iLen1,iLen2;
     int iFirst[N] = {0},iSecond[N] = {0},iResult[N] = {0};
+
     iLen1 = strlen(cFirst);
     iLen2 = strlen(cSecond);
-
     TranChar2Int(cFirst,iFirst);
     TranChar2Int(cSecond,iSecond);
-    //ÏÈ×ö¶ÔÓ¦Î»µÄ³Ë·¨
+
+
+    //å…ˆåšå¯¹åº”ä½çš„ä¹˜æ³•
     for (i = 0; i < iLen1; i++)
     {
         for (j = 0; j < iLen2; j++)
@@ -209,7 +211,7 @@ void MultiplyBigNum(char cFirst[],char cSecond[],char cResult[])
             iResult[i + j] += iFirst[i] * iSecond[j];
         }
     }
-    //ÔÙÊµÏÖ½øÎ»²Ù×÷
+    //å†å®ç°è¿›ä½æ“ä½œ
     for (i = 0; i < iLen1 + iLen2; i++)
     {
         if (iResult[i] > 9)
@@ -219,14 +221,15 @@ void MultiplyBigNum(char cFirst[],char cSecond[],char cResult[])
         }
     }
 
+
     TranInt2Char(iResult,cResult,GetFirstNot0Index(iResult,iLen1 + iLen2));
 }
 /*
-º¯ÊıÃû  PowOf10
-º¯Êı¹¦ÄÜ£º(10^iPow)*iQuotientNum
-Èë²Î    : cNum[]¡¢iPowÓëiQuotientNum
-³ö²Î    £ºÊı×écNum[]
-·µ»ØÖµ  £ºÎŞ
+å‡½æ•°å  PowOf10
+å‡½æ•°åŠŸèƒ½ï¼š(10^iPow)*iQuotientNum
+å…¥å‚    : cNum[]ã€iPowä¸iQuotientNum
+å‡ºå‚    ï¼šæ•°ç»„cNum[]
+è¿”å›å€¼  ï¼šæ— 
 */
 void PowOf10(char cNum[],int iPow,int iQuotientNum)
 {
@@ -239,11 +242,11 @@ void PowOf10(char cNum[],int iPow,int iQuotientNum)
 	}	
 }
 /*
-º¯ÊıÃû  £ºDivBigNum
-º¯Êı¹¦ÄÜ£º´óÊı¾İ³ı·¨
-Èë²Î    : Êı×écFirst[]ÓëcSecond[]
-³ö²Î    £ºÊı×écResult[]
-·µ»ØÖµ  £ºµ±³ıÊı³ı²»¿ª±»×Ó³ıÊıÊ±·µ»Ø0£¬ÆäÓà·µ»Ø1
+å‡½æ•°å  ï¼šDivBigNum
+å‡½æ•°åŠŸèƒ½ï¼šå¤§æ•°æ®é™¤æ³•
+å…¥å‚    : æ•°ç»„cFirst[]ä¸cSecond[]
+å‡ºå‚    ï¼šæ•°ç»„cResult[]
+è¿”å›å€¼  ï¼šå½“é™¤æ•°é™¤ä¸å¼€è¢«å­é™¤æ•°æ—¶è¿”å›0ï¼Œå…¶ä½™è¿”å›1
 */
 int DivBigNum(char cFirst[],char cSecond[],char cResult[])
 {
@@ -293,11 +296,11 @@ int DivBigNum(char cFirst[],char cSecond[],char cResult[])
 	return 1;
 }
 /*
-º¯ÊıÃû  £ºModBigNum
-º¯Êı¹¦ÄÜ£º´óÊı¾İÈ¡Óà
-Èë²Î    : Êı×écFirst[]ÓëcSecond[]
-³ö²Î    £ºÊı×écFirst[]
-·µ»ØÖµ  £ºÎŞ
+å‡½æ•°å  ï¼šModBigNum
+å‡½æ•°åŠŸèƒ½ï¼šå¤§æ•°æ®å–ä½™
+å…¥å‚    : æ•°ç»„cFirst[]ä¸cSecond[]
+å‡ºå‚    ï¼šæ•°ç»„cFirst[]
+è¿”å›å€¼  ï¼šæ— 
 */
 void ModBigNum(char cFirst[],char cSecond[])
 {
